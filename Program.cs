@@ -253,7 +253,7 @@ static void ExecutarFatorial()
                 resultado *= i; 
             }
 
-            Console.WriteLine($"\nO fatorial de {numero}! é: {resultado}");
+            Console.WriteLine($"\nO fatorial de {numero} é {resultado}!");
         }
         else
         {
