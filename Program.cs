@@ -40,17 +40,32 @@
 
 // Console.WriteLine("O numero digitado foi " + num);
 
-// Como corrigir pra não quebrar o código:
-// int num = 0;
+// // Como corrigir pra não quebrar o código:
+// // int num = 0;
 
-using System.Xml;
+// using System.Xml;
 
-Console.WriteLine("Digite um numero: ");
-bool ehNumero = int.TryParse(Console.ReadLine(), out int num);
+// Console.WriteLine("Digite um numero: ");
+// bool ehNumero = int.TryParse(Console.ReadLine(), out int num);
 
-while (!ehNumero)
+// while (!ehNumero)
+// {
+//     Console.WriteLine("Valor inválido, Digite um numero: ");
+//     ehNumero = int.TryParse(Console.ReadLine(), out num);
+// }
+// Console.WriteLine("O numero digitado foi " + num);
+
+// Entendendo o do while - O do while executa o bloco de código pelo menos uma vez, mesmo que a condição seja falsa.
+int num = 0;
+
+// while (num < 1 || num > 10)
+// {
+//     Console.WriteLine("Digite um numero entre 1 e 10: ");
+//     num = int.Parse(Console.ReadLine());
+// }
+do
 {
-    Console.WriteLine("Valor inválido, Digite um numero: ");
-    ehNumero = int.TryParse(Console.ReadLine(), out num);
-}
-Console.WriteLine("O numero digitado foi " + num);
+    Console.WriteLine("Digite um numero entre 1 e 10: ");
+    num = int.Parse(Console.ReadLine());
+} while (num < 1 || num > 10);
+Console.WriteLine("Você digitou: " + num);
