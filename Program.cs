@@ -116,17 +116,71 @@ multiplicar antessessores positivos.
 Exemplo 2
 */
 // fatorial com "for"
-Console.WriteLine("Informe um número inteiro para ver seu fatorial: ");
-int numero = Convert.ToInt32(Console.ReadLine());
 
-int fatorial = numero;
-for (int i = 1; i < numero; i++)
-{
-    fatorial *= i;  
-}
-Console.WriteLine($"O resultado fatorial de {numero} é igual a {fatorial}");
+// Console.WriteLine("Informe um número inteiro para ver seu fatorial: ");
+// int numero = Convert.ToInt32(Console.ReadLine());
+
+// int fatorial = numero;
+// for (int i = 1; i < numero; i++)
+// {
+//     fatorial *= i;  
+// }
+// Console.WriteLine($"O resultado fatorial de {numero} é igual a {fatorial}");
 
 
 /*
-
+Criar menu para "desafio" 1
 */
+
+do
+{
+    Console.WriteLine("Escolha uma opção: ");
+    Console.WriteLine("1 - Tabuada");
+    Console.WriteLine("2 - Input Validador");
+    Console.WriteLine("3 - Fatorial");
+    Console.WriteLine("4 - Sair");
+    int opcao = int.Parse(Console.ReadLine());  
+
+//     if (opcao == 1)
+//     {
+//         // Chamar função tabuada
+//     }
+//     else if (opcao == 2)
+//     {
+//         // Chamar função validador de dados
+//     }
+//     else if (opcao == 3)
+//     {
+//         // Chamar função fatorial
+//     }
+//     else if (opcao == 4)
+//     {
+//         Console.WriteLine("Saindo...");
+//         break;
+//     }
+//     else
+//     {
+//         Console.WriteLine("Opção inválida, tente novamente.");
+//     }
+// }
+
+
+    // switch (opcao)
+    // {
+    //     case 1:
+    //         // Chamar função tabuada
+    //         break;
+    //     case 2:
+    //         // Chamar função validador de dados
+    //         break;
+    //     case 3:
+    //         // Chamar função fatorial
+    //         break;
+    //     case 4:
+    //         Console.WriteLine("Saindo...");
+    //         break;
+    //     default:
+    //         Console.WriteLine("Opção inválida, tente novamente.");
+    //         break;
+    // }
+}
