@@ -262,3 +262,5 @@ static void ExecutarFatorial()
         
         Console.WriteLine("------------------------\n");
     }
+
+    
