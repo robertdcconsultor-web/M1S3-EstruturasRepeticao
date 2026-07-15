@@ -132,8 +132,7 @@ Exemplo 2
 Criar menu para "desafio" 1
 */
 
-do
-{
+do {
     Console.WriteLine("Escolha uma opção: ");
     Console.WriteLine("1 - Tabuada");
     Console.WriteLine("2 - Input Validador");
@@ -141,6 +140,9 @@ do
     Console.WriteLine("4 - Sair");
     int opcao = int.Parse(Console.ReadLine());  
 
+}
+
+    
 //     if (opcao == 1)
 //     {
 //         // Chamar função tabuada
@@ -183,4 +185,3 @@ do
     //         Console.WriteLine("Opção inválida, tente novamente.");
     //         break;
     // }
-}
