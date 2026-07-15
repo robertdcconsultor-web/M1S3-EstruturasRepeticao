@@ -113,5 +113,20 @@ multiplicar antessessores positivos.
 // Console.WriteLine($"O fatorial de {number} é {fatorial}");
 
 /*
+Exemplo 2
+*/
+// fatorial com "for"
+Console.WriteLine("Informe um número inteiro para ver seu fatorial: ");
+int numero = Convert.ToInt32(Console.ReadLine());
+
+int fatorial = numero;
+for (int i = 1; i < numero; i++)
+{
+    fatorial *= i;  
+}
+Console.WriteLine($"O resultado fatorial de {numero} é igual a {fatorial}");
+
+
+/*
 
 */
