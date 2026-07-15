@@ -130,58 +130,135 @@ Exemplo 2
 
 /*
 Criar menu para "desafio" 1
+Crie um menu de aplicação interativo e englobe os exercicios anteriores para selecionar qual sera executado. 
+Os itens do menu devem ser :
+1 - Tabuada                          3 Fatorial 
+2 - input validator             4 sair (se selecionado sair do programa)
+
 */
 
-do {
-    Console.WriteLine("Escolha uma opção: ");
+string opcaoMenu;
+
+do
+{
+    // Mostra as opções na tela
+    Console.WriteLine("\n--- MENU DE EXERCÍCIOS ---");
     Console.WriteLine("1 - Tabuada");
-    Console.WriteLine("2 - Input Validador");
+    Console.WriteLine("2 - Input Validator");
     Console.WriteLine("3 - Fatorial");
     Console.WriteLine("4 - Sair");
-    int opcao = int.Parse(Console.ReadLine());  
+    Console.Write("Escolha uma opção: ");
 
-}
-
+    // Lê o que o usuário digitou ;     
+    opcaoMenu = Console.ReadLine();
     
-//     if (opcao == 1)
-//     {
-//         // Chamar função tabuada
-//     }
-//     else if (opcao == 2)
-//     {
-//         // Chamar função validador de dados
-//     }
-//     else if (opcao == 3)
-//     {
-//         // Chamar função fatorial
-//     }
-//     else if (opcao == 4)
-//     {
-//         Console.WriteLine("Saindo...");
-//         break;
-//     }
-//     else
-//     {
-//         Console.WriteLine("Opção inválida, tente novamente.");
-//     }
-// }
+    // int opcaoMenu = int.TryParse(Console.ReadLine());
 
+    // Direciona para o código correspondente
+    switch (opcaoMenu)
+    {
+        case "1":
+            ExecutarTabuada();
+            break;
+        case "2":
+            ExecutarInputValidator();
+            break;
+        case "3":
+            ExecutarFatorial();
+            break;
+        case "4":
+            Console.WriteLine("Saindo do programa... Até logo!");
+            break;
+        default:
+            Console.WriteLine("Opção inválida! Tente novamente com um número de 1 a 4.");
+            break;
+    }
 
-    // switch (opcao)
-    // {
-    //     case 1:
-    //         // Chamar função tabuada
-    //         break;
-    //     case 2:
-    //         // Chamar função validador de dados
-    //         break;
-    //     case 3:
-    //         // Chamar função fatorial
-    //         break;
-    //     case 4:
-    //         Console.WriteLine("Saindo...");
-    //         break;
-    //     default:
-    //         Console.WriteLine("Opção inválida, tente novamente.");
-    //         break;
-    // }
+} while (opcaoMenu != "4");
+
+    // --- Espaço reservado para os exercícios ---
+
+    static void ExecutarTabuada()
+    {
+        Console.WriteLine("\n--- MÓDULO: TABUADA ---");
+        Console.Write("Digite um número para ver a sua tabuada: ");
+        
+        // Lê o que o usuário digitou e converte de texto (string) para número inteiro (int)
+        int numero = int.Parse(Console.ReadLine());
+
+        Console.WriteLine($"\nTabuada do {numero}:");
+
+        // O laço de repetição (for)
+        for (int i = 1; i <= 10; i++)
+        {
+            int resultado = numero * i;
+            Console.WriteLine($"{numero} x {i} = {resultado}");
+        }
+        
+        Console.WriteLine("-----------------------\n");
+    }
+
+static void ExecutarInputValidator()
+    {
+        Console.WriteLine("\n--- MÓDULO: INPUT VALIDATOR ---");
+        
+        int numeroValido = 0;
+        bool entradaCorreta = false;
+
+        // O laço vai continuar rodando ENQUANTO a entrada não for correta
+        while (!entradaCorreta)
+        {
+            Console.Write("Digite um número entre 1 e 100: ");
+            string textoDigitado = Console.ReadLine();
+
+            // Tenta converter o texto para número de forma segura
+            if (int.TryParse(textoDigitado, out numeroValido))
+            {
+                // Se for número, verifica se está dentro da regra (entre 1 e 100)
+                if (numeroValido >= 1 && numeroValido <= 100)
+                {
+                    Console.WriteLine($"\nSucesso! Você digitou o número válido: {numeroValido}");
+                    entradaCorreta = true; // Isso quebra o laço while
+                }
+                else
+                {
+                    Console.WriteLine("Erro: O número precisa estar exatamente entre 1 e 100. Tente de novo.\n");
+                }
+            }
+            else
+            {
+                // Se o usuário digitou letras, símbolos ou deixou em branco
+                Console.WriteLine("Erro: Entrada inválida. Por favor, digite apenas números.\n");
+            }
+        }
+        
+        Console.WriteLine("-------------------------------\n");
+    }
+
+static void ExecutarFatorial()
+    {
+        Console.WriteLine("\n--- MÓDULO: FATORIAL ---");
+        Console.Write("Digite um número inteiro positivo: ");
+        
+        // Usamos o TryParse para garantir que não vai quebrar se digitar letras
+        if (int.TryParse(Console.ReadLine(), out int numero) && numero >= 0)
+        {
+            // Usamos 'long' em vez de 'int' porque fatoriais crescem absurdamente rápido e não cabem em um 'int' normal
+            long resultado = 1;
+
+            // O laço começa no número digitado e vai diminuindo até chegar em 1
+            for (int i = numero; i > 1; i--)
+            {
+                // Isso é o mesmo que: resultado = resultado * i;
+                resultado *= i; 
+            }
+
+            Console.WriteLine($"\nO fatorial de {numero}! é: {resultado}");
+        }
+        else
+        {
+            Console.WriteLine("\nErro: Entrada inválida. Por favor, digite apenas números inteiros e positivos.");
+        }
+        
+        Console.WriteLine("------------------------\n");
+    }
